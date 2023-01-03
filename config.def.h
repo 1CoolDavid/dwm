@@ -92,8 +92,8 @@ static const char *volume[3][4] = {
 
 // Brightness Commands
 static const char *brightness[2][4] = {
-   {"/bin/sh", "-c", "acpi_bright -d intel_backlight -c 100; pkill -RTMIN+11 dwmblocks", NULL},
-   {"/bin/sh", "-c", "acpi_bright -d intel_backlight -c -100; pkill -RTMIN+11 dwmblocks", NULL},
+   {"/bin/sh", "-c", "acpi_bright -d intel_backlight -s +5%; pkill -RTMIN+11 dwmblocks", NULL},
+   {"/bin/sh", "-c", "acpi_bright -d intel_backlight -s -5%; pkill -RTMIN+11 dwmblocks", NULL},
 };
 
 static const Key keys[] = {
