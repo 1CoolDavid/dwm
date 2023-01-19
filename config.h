@@ -7,7 +7,7 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10", "SymbolsNerdFont:weight=bold:size=16" };
+static const char *fonts[]          = { "monospace:size=12:weight=bold", "SymbolsNerdFont:weight=bold:size=14" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -81,6 +81,12 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 
 static const char *termcmd[]  = { "alacritty", NULL };
 
+static const char *firefoxcmd[] = { "firefox", NULL };
+
+static const char *vscodecmd[] = { "code", NULL };
+
+static const char *nvimcmd[] = { "alacritty", "-e", "nvim", NULL };
+
 //static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 static const char *rofi_launch_cmd[] = { "/home/david/.config/rofi/bin/launcher", NULL };
 
@@ -100,6 +106,9 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofi_launch_cmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,			XK_v,	   spawn,	   {.v = nvimcmd  } },
+	{ MODKEY|ShiftMask,		XK_t,	   spawn,	   {.v = firefoxcmd } },
+	{ MODKEY, 			XK_e,	   spawn,	   {.v = vscodecmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
