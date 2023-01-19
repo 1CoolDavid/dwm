@@ -53,6 +53,16 @@ index b0b3466..d871457 100644
  static void spawn(const Arg *arg);
  static void tag(const Arg *arg);
  static void tagmon(const Arg *arg);
+@@ -238,6 +240,9 @@ static void zoom(const Arg *arg);
+ /* variables */
+ static const char broken[] = "broken";
+ static char stext[256];
++static int statusw;
++static int statussig;
++static pid_t statuspid = -1;
+ static int screen;
+ static int sw, sh;           /* X display screen geometry width, height */
+ static int bh, blw = 0;      /* bar geometry */
 @@ -422,6 +427,7 @@ buttonpress(XEvent *e)
  	Client *c;
  	Monitor *m;
